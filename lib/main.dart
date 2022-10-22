@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await Future.delayed(const Duration(seconds: 3));
   runApp(const MyApp());
 }
 
@@ -9,20 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(builder: (context, AsyncSnapshot snapshot) {
-      if (snapshot.connectionState == ConnectionState.waiting) {
-        return MaterialApp(home: Splash());
-      } else {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        );
-      }
-      ;
-    });
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
   }
 }
 
@@ -69,22 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class Splash extends StatelessWidget {
-  const Splash({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Icon(
-          Icons.apartment_outlined,
-          size: MediaQuery.of(context).size.width * 0.785,
-        ),
-      ),
     );
   }
 }
