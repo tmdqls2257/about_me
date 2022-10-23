@@ -20,7 +20,7 @@ class DropdownButtonApp extends StatelessWidget {
         child: DropdownButtonFormField(
           hint: CustomText(
             text: '이력서',
-            typoType: TypoType.bodySmaller,
+            typoType: TypoType.bodyBolder,
           ),
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -60,7 +60,7 @@ class DropdownButtonApp extends StatelessWidget {
       value: item,
       child: CustomText(
         text: item,
-        typoType: TypoType.bodySmaller,
+        typoType: TypoType.body,
       ),
     );
   }
