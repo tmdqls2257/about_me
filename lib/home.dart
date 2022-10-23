@@ -1,4 +1,5 @@
 import 'package:about_me/shared/custom_color.dart';
+import 'package:about_me/shared/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
           'assets/logo.svg',
           width: 94,
         ),
-        backgroundColor: customColor['white'],
+        backgroundColor: customColor[CustomColor.white],
         elevation: 0,
       ),
       body: Column(children: [
@@ -30,6 +31,20 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
+        Container(
+          color: customColor[CustomColor.yellow],
+          width: MediaQuery.of(context).size.width,
+          height: 272,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 20, 24, 20),
+            child: Column(children: [
+              CustomText(
+                text: '저를 소개합니다 :)',
+                typoType: TypoType.h1,
+              )
+            ]),
+          ),
+        )
       ]),
     );
   }
