@@ -69,9 +69,13 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/logos/
+    - assets/fonts/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
+  fonts:
+    - family: Gmarket Sans
+      fonts:
+        - asset: assets/fonts/GmarketSansBold.otf
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
