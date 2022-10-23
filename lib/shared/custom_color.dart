@@ -9,7 +9,8 @@ enum CustomColor {
   blue,
   darkGreen,
   crimson,
-  purple
+  purple,
+  stroke
 }
 
 Map<CustomColor, Color> customColor = {
@@ -21,5 +22,6 @@ Map<CustomColor, Color> customColor = {
   CustomColor.blue: const Color(0xFF3F8FF2),
   CustomColor.darkGreen: const Color(0xFF73CD91),
   CustomColor.crimson: const Color(0xFFFF5A5F),
-  CustomColor.purple: const Color(0xFF8D79FE)
+  CustomColor.purple: const Color(0xFF8D79FE),
+  CustomColor.stroke: const Color(0xFFEBEDFF),
 };
