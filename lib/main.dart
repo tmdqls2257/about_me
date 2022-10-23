@@ -1,4 +1,4 @@
-import 'package:about_me/splash.dart';
+import 'package:about_me/shared/custom_color.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: customColor['white']),
       home: const Home(),
     );
   }
