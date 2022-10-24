@@ -1,4 +1,4 @@
-import 'package:about_me/shared/custom_color.dart';
+import 'package:about_me/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
