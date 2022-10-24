@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
+enum CustomW { w1, w2, w3, w4 }
+
+final customW = {
+  CustomW.w1: 87.0,
+  CustomW.w2: 120.0,
+  CustomW.w3: 150.0,
+};
+
 enum CustomColor {
   black,
+  lightblack,
   yellow,
   white,
   grey,
@@ -13,8 +22,9 @@ enum CustomColor {
   stroke
 }
 
-Map<CustomColor, Color> customColor = {
+final customColor = {
   CustomColor.black: const Color(0xFF1D1E1F),
+  CustomColor.lightblack: const Color(0xFF39393B),
   CustomColor.yellow: const Color(0xFFFFFF7E),
   CustomColor.white: const Color(0xFFFFFFFF),
   CustomColor.grey: const Color(0xFF6F7276),
