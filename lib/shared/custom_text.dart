@@ -1,6 +1,8 @@
+// ignore_for_file: overridden_fields, annotate_overrides
+
 import 'package:flutter/material.dart';
 
-import 'custom_color.dart';
+import 'theme.dart';
 
 enum TypoType {
   h1,
@@ -65,26 +67,55 @@ final typoStyle = {
   ),
 };
 
-class CustomText extends SizedBox {
+class CustomText extends Text {
   final String text;
   final TypoType typoType;
   final TextAlign textAlign;
+  final CustomColor? color;
+  final double? height;
 
   CustomText({
     super.key,
     this.text = '',
     this.textAlign = TextAlign.center,
     this.typoType = TypoType.body,
+    this.color = CustomColor.black,
+    this.height,
   }) : super(
-          child: Text(
-            text,
-            textAlign: textAlign,
-            style: TextStyle(
-              color: customColor[CustomColor.black],
-              fontWeight: typoStyle[typoType]!.fontWeight,
-              fontSize: typoStyle[typoType]!.fontSize,
-              fontFamily: typoStyle[typoType]?.fontFamily,
-            ),
+          text,
+          textAlign: textAlign,
+          style: TextStyle(
+            color: customColor[color],
+            fontWeight: typoStyle[typoType]!.fontWeight,
+            fontSize: typoStyle[typoType]!.fontSize,
+            fontFamily: typoStyle[typoType]?.fontFamily,
+            height: height,
+          ),
+        );
+}
+
+class CustomTextSpan extends TextSpan {
+  final String text;
+  final TypoType typoType;
+  final CustomColor? color;
+  final double? height;
+  final List<InlineSpan>? children;
+
+  CustomTextSpan(
+      {this.text = '',
+      this.typoType = TypoType.bodyBolder,
+      this.color = CustomColor.grey,
+      this.height,
+      this.children})
+      : super(
+          text: text,
+          children: children,
+          style: TextStyle(
+            color: customColor[color],
+            fontWeight: typoStyle[typoType]!.fontWeight,
+            fontSize: typoStyle[typoType]!.fontSize,
+            fontFamily: typoStyle[typoType]?.fontFamily,
+            height: height,
           ),
         );
 }
