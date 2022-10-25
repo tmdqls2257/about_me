@@ -20,7 +20,8 @@ enum CustomColor {
   crimson,
   purple,
   stroke,
-  lightgrey
+  lightgrey,
+  card
 }
 
 final customColor = {
@@ -36,4 +37,5 @@ final customColor = {
   CustomColor.crimson: const Color(0xFFFF5A5F),
   CustomColor.purple: const Color(0xFF8D79FE),
   CustomColor.stroke: const Color(0xFFEBEDFF),
+  CustomColor.card: const Color(0xFF73CD91),
 };
