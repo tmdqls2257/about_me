@@ -1,5 +1,3 @@
-// ignore_for_file: overridden_fields, annotate_overrides
-
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
@@ -70,20 +68,18 @@ final typoStyle = {
 class CustomText extends Text {
   final String text;
   final TypoType typoType;
-  final TextAlign textAlign;
   final CustomColor? color;
   final double? height;
 
   CustomText({
     super.key,
     this.text = '',
-    this.textAlign = TextAlign.center,
+    super.textAlign = TextAlign.center,
     this.typoType = TypoType.body,
     this.color = CustomColor.black,
     this.height,
   }) : super(
           text,
-          textAlign: textAlign,
           style: TextStyle(
             color: customColor[color],
             fontWeight: typoStyle[typoType]!.fontWeight,
@@ -95,21 +91,17 @@ class CustomText extends Text {
 }
 
 class CustomTextSpan extends TextSpan {
-  final String text;
   final TypoType typoType;
   final CustomColor? color;
   final double? height;
-  final List<InlineSpan>? children;
 
   CustomTextSpan(
-      {this.text = '',
+      {super.text,
       this.typoType = TypoType.bodyBolder,
       this.color = CustomColor.grey,
       this.height,
-      this.children})
+      super.children})
       : super(
-          text: text,
-          children: children,
           style: TextStyle(
             color: customColor[color],
             fontWeight: typoStyle[typoType]!.fontWeight,
