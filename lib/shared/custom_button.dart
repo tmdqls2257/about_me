@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'custom_text.dart';
 import 'theme.dart';
 
 class CircleButton extends StatelessWidget {
@@ -37,7 +38,8 @@ class CustomButton extends ClipRRect {
   final String label;
   final CustomW width;
   final double height;
-  final double fontSize;
+  final TypoType typoType;
+  final BorderRadiusGeometry borderRadius;
   final Function() onPressed;
 
   CustomButton({
@@ -45,8 +47,9 @@ class CustomButton extends ClipRRect {
     this.width = CustomW.w4,
     this.bgColor = CustomColor.lightblack,
     this.textColor = CustomColor.white,
-    this.fontSize = 12,
+    this.typoType = TypoType.body,
     this.height = 36.0,
+    this.borderRadius = BorderRadius.zero,
     required this.label,
     required this.onPressed,
   }) : super(
@@ -59,14 +62,15 @@ class CustomButton extends ClipRRect {
                 width: customW[width],
                 decoration: BoxDecoration(
                   color: customColor[bgColor],
+                  borderRadius: borderRadius,
                 ),
                 child: Center(
                   child: Text(
                     label,
                     style: TextStyle(
                       color: customColor[textColor],
-                      fontSize: fontSize,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: typoStyle[typoType]!.fontWeight,
+                      fontSize: typoStyle[typoType]!.fontSize,
                     ),
                   ),
                 ),

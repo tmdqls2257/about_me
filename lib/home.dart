@@ -54,10 +54,62 @@ class Home extends StatelessWidget {
     );
   }
 
-  void onTapPopUp(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => WebViewGithub()),
+  Future<void> onTapPopUp(BuildContext context) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          contentPadding: const EdgeInsets.all(0),
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
+              width: 302,
+              height: 108,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(
+                      text: '이메일: tmdqls2257@gamil.com',
+                    ),
+                    CustomText(
+                      text: '연락처: 010-8345-8387',
+                    )
+                  ]),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: CustomButton(
+                    label: '닫기',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    height: 50,
+                    bgColor: CustomColor.lightgrey,
+                    typoType: TypoType.h3,
+                    textColor: CustomColor.grey,
+                    borderRadius:
+                        const BorderRadius.only(bottomLeft: Radius.circular(5)),
+                  ),
+                ),
+                Expanded(
+                  child: CustomButton(
+                    label: '연락하기',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    height: 50,
+                    bgColor: CustomColor.green,
+                    typoType: TypoType.h3,
+                    borderRadius: const BorderRadius.only(
+                        bottomRight: Radius.circular(5)),
+                  ),
+                ),
+              ],
+            )
+          ],
+        );
+      },
     );
   }
 
@@ -95,6 +147,7 @@ class Home extends StatelessWidget {
                   LearnMoreAboutMe(
                     onTap: onTapGithup,
                     column: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
@@ -122,10 +175,12 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const Spacer(),
                   LearnMoreAboutMe(
                     assetPath: 'assets/icons/chat_icon.svg',
                     onTap: onTapPopUp,
                     column: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Stack(
@@ -143,6 +198,28 @@ class Home extends StatelessWidget {
                         CustomText(
                           text: '합격 결과는 여기로 통보해 주세요',
                           typoType: TypoType.bodyLight,
+                          color: CustomColor.grey,
+                        )
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  LearnMoreAboutMe(
+                    assetPath: 'assets/icons/feeding_bottle_icon.svg',
+                    onTap: onTapPopUp,
+                    isButton: false,
+                    column: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomText(
+                          text: '육아크루 지원동기',
+                          typoType: TypoType.bodyBolder,
+                        ),
+                        CustomText(
+                          text: '합류한다면 이런 일을 하고 싶습니다.',
+                          typoType: TypoType.bodyLight,
+                          color: CustomColor.grey,
                         )
                       ],
                     ),
@@ -160,6 +237,7 @@ class Home extends StatelessWidget {
 class LearnMoreAboutMe extends StatelessWidget {
   final String assetPath;
   final Column column;
+  final bool isButton;
   final void Function(BuildContext) onTap;
 
   const LearnMoreAboutMe({
@@ -167,6 +245,7 @@ class LearnMoreAboutMe extends StatelessWidget {
     this.assetPath = '',
     required this.column,
     required this.onTap,
+    this.isButton = true,
   }) : super(key: key);
 
   @override
@@ -184,9 +263,18 @@ class LearnMoreAboutMe extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
         children: [
-          if (assetPath != '') SvgPicture.asset(assetPath),
-          column,
-          CircleButton(onTap: onTap)
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
+            children: [
+              if (assetPath != '') SvgPicture.asset(assetPath),
+              if (assetPath != '')
+                const SizedBox(
+                  width: 16,
+                ),
+              column,
+            ],
+          ),
+          if (isButton) CircleButton(onTap: onTap)
         ],
       ),
     );
