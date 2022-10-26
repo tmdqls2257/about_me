@@ -1,7 +1,9 @@
 import 'package:about_me/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'home.dart';
+import 'provider/bottom_navigation_provider.dart';
 
 void main() async {
   // await Future.delayed(const Duration(seconds: 3));
@@ -16,7 +18,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(scaffoldBackgroundColor: customColor[CustomColor.white]),
-      home: const Home(),
+      home: MultiProvider(providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) => BottomNavigationProvider(),
+        )
+      ], child: const Home()),
     );
   }
 }
