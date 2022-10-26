@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:about_me/provider/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewGithub extends StatelessWidget {
@@ -10,13 +12,30 @@ class WebViewGithub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BottomNavigationProvider bottomNavigationProvider =
+        Provider.of<BottomNavigationProvider>(context);
+
     return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: true,
+          leading: Row(children: [
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                // Navigator.pop(context);
+                // Navigator.of(context).pop();
+                // bottomNavigationProvider.updateCurrentPage(index);
+                bottomNavigationProvider.pop();
+              },
+            )
+          ]),
+        ),
         body: WebView(
-      initialUrl: 'https://github.com/tmdqls2257',
-      javascriptMode: JavascriptMode.unrestricted,
-      onWebViewCreated: (WebViewController webViewController) {
-        _controller.complete(webViewController);
-      },
-    ));
+          initialUrl: 'https://github.com/tmdqls2257',
+          javascriptMode: JavascriptMode.unrestricted,
+          onWebViewCreated: (WebViewController webViewController) {
+            _controller.complete(webViewController);
+          },
+        ));
   }
 }
