@@ -18,11 +18,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(scaffoldBackgroundColor: customColor[CustomColor.white]),
-      home: MultiProvider(providers: [
-        ChangeNotifierProvider(
-          create: (BuildContext context) => BottomNavigationProvider(),
-        )
-      ], child: const Home()),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (BuildContext context) => BottomNavigationProvider(),
+          )
+        ],
+        child: const Home(),
+      ),
     );
   }
 }
