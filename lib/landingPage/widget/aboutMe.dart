@@ -10,6 +10,36 @@ class AboutMe extends StatelessWidget {
 
   final BuildContext context;
 
+  void _showButtomSheet(BuildContext context) {
+    showModalBottomSheet<void>(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(20),
+          height: 462,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    CloseButton(
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,10 +72,11 @@ class AboutMe extends StatelessWidget {
           ),
           const Spacer(),
           CustomButton(
-            label: '소개글 읽기',
-            width: CustomW.w2,
-            onPressed: () {},
-          ),
+              label: '소개글 읽기',
+              width: CustomW.w2,
+              onPressed: () {
+                _showButtomSheet(context);
+              }),
         ]),
       ),
     );
