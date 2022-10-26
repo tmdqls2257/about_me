@@ -1,8 +1,10 @@
 import 'package:about_me/landingPage/first_page.dart';
+import 'package:about_me/motive/motive_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
+import 'career/career_page.dart';
 import 'provider/bottom_navigation_provider.dart';
 import 'shared/theme.dart';
 import 'web_view_github.dart';
@@ -14,9 +16,12 @@ class Home extends StatelessWidget {
     switch (bottomNavigationProvider.currentPage) {
       case 0:
         return const FirstPage();
-
       case 1:
         return WebViewGithub();
+      case 2:
+        return const MotivePage();
+      case 3:
+        return const CareerPage();
     }
     return Container();
   }
