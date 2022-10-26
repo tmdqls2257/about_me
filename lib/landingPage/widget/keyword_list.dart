@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../carouselSlider/carouse.dart';
 import '../../shared/shared.dart';
+import 'keyword_card.dart';
 
 class KeywordList extends StatelessWidget {
   const KeywordList({
