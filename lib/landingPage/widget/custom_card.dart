@@ -13,6 +13,7 @@ class CustomCard extends StatelessWidget {
       width: 150,
       height: 178,
       child: Card(
+        margin: EdgeInsets.zero,
         color: customColor[CustomColor.card],
         child: widget,
       ),

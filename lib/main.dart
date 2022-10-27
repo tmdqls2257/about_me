@@ -1,3 +1,4 @@
+import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:about_me/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,9 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(
             create: (BuildContext context) => BottomNavigationProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => KeywordProvider(),
           )
         ],
         child: const Home(),

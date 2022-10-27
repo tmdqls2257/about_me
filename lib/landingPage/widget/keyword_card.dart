@@ -4,7 +4,25 @@ import 'package:flutter/material.dart';
 import '../../shared/shared.dart';
 
 class KeywordCard extends StatelessWidget {
-  const KeywordCard({super.key});
+  final int idx;
+  final String title;
+  final String content;
+
+  const KeywordCard({
+    super.key,
+    required this.idx,
+    required this.title,
+    required this.content,
+  });
+
+  String _contentSplit(String content) {
+    if (content.length > 20) {
+      String subWord = '${content.substring(0, 21)}...';
+      return subWord;
+    } else {
+      return content;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +40,7 @@ class KeywordCard extends StatelessWidget {
                 color: customColor[CustomColor.black],
                 child: Center(
                   child: CustomText(
-                    text: '키워드1',
+                    text: '키워드${idx + 1}',
                     color: CustomColor.white,
                     typoType: TypoType.labelSmaller,
                   ),
@@ -32,7 +50,7 @@ class KeywordCard extends StatelessWidget {
                 height: 17,
               ),
               CustomText(
-                text: '성실',
+                text: title,
                 typoType: TypoType.h3,
               ),
             ]),
@@ -43,12 +61,21 @@ class KeywordCard extends StatelessWidget {
             height: 1,
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(6, 12, 6, 0),
+            padding: const EdgeInsets.fromLTRB(6, 12, 6, 11.5),
             child: CustomText(
-              text: '키워드 키워드 키워드 키워드 키워드 sdsdsd',
+              text: _contentSplit(content),
               typoType: TypoType.labelLight,
               textAlign: TextAlign.start,
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              CircleButton(
+                onTap: (context) {},
+                icon: Icons.keyboard_arrow_down,
+              )
+            ],
           ),
         ]),
       ),

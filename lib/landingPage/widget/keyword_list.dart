@@ -1,7 +1,11 @@
+import 'package:about_me/landingPage/keyword_model.dart';
+import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../carouselSlider/carouse.dart';
 import '../../shared/shared.dart';
+import '../keyword_data.dart';
 import 'keyword_card.dart';
 
 class KeywordList extends StatelessWidget {
@@ -14,7 +18,9 @@ class KeywordList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List list = [const KeywordCard(), const KeywordCard(), const KeywordCard()];
+    KeywordProvider keywordProvider =
+        Provider.of<KeywordProvider>(context, listen: false);
+    // List<KeyWord> list = keywordList;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -30,9 +36,10 @@ class KeywordList extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
           child: Carousel(
             height: 178,
-            items: list,
-            builderFunction: (context, item) {
-              return const KeywordCard();
+            items: keywordProvider.currentKeywords,
+            builderFunction: (context, item, index) {
+              return KeywordCard(
+                  idx: index, title: item.title, content: item.content);
             },
           ),
         )

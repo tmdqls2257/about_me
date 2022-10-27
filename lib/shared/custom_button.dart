@@ -4,10 +4,12 @@ import 'custom_text.dart';
 import 'theme.dart';
 
 class CircleButton extends StatelessWidget {
-  final void Function(BuildContext) onTap;
+  final Function(BuildContext) onTap;
+  final IconData icon;
   const CircleButton({
     Key? key,
     required this.onTap,
+    this.icon = Icons.arrow_forward_ios_rounded,
   }) : super(key: key);
 
   @override
@@ -20,11 +22,10 @@ class CircleButton extends StatelessWidget {
           onTap: () {
             onTap(context);
           }, // inkwell color
-          child: const SizedBox(
+          child: SizedBox(
             width: 30,
             height: 30,
-            child: Icon(Icons.arrow_forward_ios_rounded,
-                size: 20, color: Colors.white),
+            child: Icon(icon, size: 20, color: Colors.white),
           ),
         ),
       ),

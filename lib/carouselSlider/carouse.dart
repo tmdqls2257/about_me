@@ -1,3 +1,4 @@
+import 'package:about_me/landingPage/keyword_model.dart';
 import 'package:flutter/material.dart';
 
 import '../shared/shared.dart';
@@ -14,7 +15,7 @@ class Carousel extends StatelessWidget {
   final List<dynamic> items;
   final double dividerIndent;
 
-  final Function(BuildContext context, dynamic item) builderFunction;
+  final Function(BuildContext context, KeyWord item, int index) builderFunction;
 
   final double height;
 
@@ -30,7 +31,8 @@ class Carousel extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: items.length,
           itemBuilder: (context, index) {
-            Widget item = builderFunction(context, items[index]);
+            // print(builderFunction(context, items[index]));
+            Widget item = builderFunction(context, items[index], index);
             return item;
           }),
     );
