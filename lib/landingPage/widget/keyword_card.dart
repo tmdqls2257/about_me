@@ -2,6 +2,7 @@ import 'package:about_me/landingPage/widget/custom_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/shared.dart';
+import 'keyword_detail.dart';
 
 class KeywordCard extends StatelessWidget {
   final int idx;
@@ -72,7 +73,13 @@ class KeywordCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               CircleButton(
-                onTap: (context) {},
+                onTap: (context) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const KeywordDetail()),
+                  );
+                },
                 icon: Icons.keyboard_arrow_down,
               )
             ],
