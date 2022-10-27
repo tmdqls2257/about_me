@@ -9,6 +9,7 @@ class BottomNavigationProvider extends ChangeNotifier {
   // }
   final List<int> _indexList = [0];
   int get currentPage => _indexList[_indexList.length - 1];
+  int get prevPage => _indexList[_indexList.length - 2];
   push(int index) {
     _indexList.add(index);
     notifyListeners();

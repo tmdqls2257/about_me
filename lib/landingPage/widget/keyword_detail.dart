@@ -1,11 +1,16 @@
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/bottom_navigation_provider.dart';
 
 class KeywordDetail extends StatelessWidget {
   const KeywordDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
+    BottomNavigationProvider bottomNavigationProvider =
+        Provider.of<BottomNavigationProvider>(context);
     return Scaffold(
       body: Column(children: [
         Container(
@@ -18,7 +23,9 @@ class KeywordDetail extends StatelessWidget {
               top: 0,
               // child: CloseButton(),
               child: CustomClose(
-                onPressed: () {},
+                onPressed: () {
+                  bottomNavigationProvider.pop();
+                },
               ),
             ),
             Center(

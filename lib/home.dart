@@ -1,4 +1,5 @@
 import 'package:about_me/landingPage/first_page.dart';
+import 'package:about_me/landingPage/widget/keyword_detail.dart';
 import 'package:about_me/motive/motive_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,6 +12,7 @@ import 'web_view_github.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
   Widget _navigationBody(
       BottomNavigationProvider bottomNavigationProvider, BuildContext context) {
     switch (bottomNavigationProvider.currentPage) {
@@ -22,6 +24,8 @@ class Home extends StatelessWidget {
         return const MotivePage();
       case 3:
         return const CareerPage();
+      case 4:
+        return const KeywordDetail();
     }
     return Container();
   }
@@ -33,16 +37,18 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: _navigationBody(bottomNavigationProvider, context),
       bottomNavigationBar: _BottomNavigationBar(
-          bottomNavigationProvider: bottomNavigationProvider),
+        bottomNavigationProvider: bottomNavigationProvider,
+      ),
     );
   }
 }
 
 class _BottomNavigationBar extends StatelessWidget {
   final BottomNavigationProvider bottomNavigationProvider;
-
-  const _BottomNavigationBar({Key? key, required this.bottomNavigationProvider})
-      : super(key: key);
+  const _BottomNavigationBar({
+    Key? key,
+    required this.bottomNavigationProvider,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +90,9 @@ class _BottomNavigationBar extends StatelessWidget {
               label: '경력기술서',
             ),
           ],
-          currentIndex: bottomNavigationProvider.currentPage,
+          currentIndex: bottomNavigationProvider.currentPage > 3
+              ? bottomNavigationProvider.prevPage
+              : bottomNavigationProvider.currentPage,
           selectedItemColor: customColor[CustomColor.crimson],
           onTap: (index) {
             bottomNavigationProvider.push(index);

@@ -1,6 +1,8 @@
 import 'package:about_me/landingPage/widget/custom_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../provider/bottom_navigation_provider.dart';
 import '../../shared/shared.dart';
 import 'keyword_detail.dart';
 
@@ -27,6 +29,8 @@ class KeywordCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BottomNavigationProvider bottomNavigationProvider =
+        Provider.of<BottomNavigationProvider>(context);
     return CustomCard(
       widget: Padding(
         padding: const EdgeInsets.fromLTRB(10, 18, 10, 0),
@@ -74,11 +78,7 @@ class KeywordCard extends StatelessWidget {
             children: [
               CircleButton(
                 onTap: (context) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const KeywordDetail()),
-                  );
+                  bottomNavigationProvider.push(4);
                 },
                 icon: Icons.keyboard_arrow_down,
               )
