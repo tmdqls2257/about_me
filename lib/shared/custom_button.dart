@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'custom_text.dart';
 import 'theme.dart';
@@ -76,6 +77,24 @@ class CustomButton extends ClipRRect {
                   ),
                 ),
               ),
+            ),
+          ),
+        );
+}
+
+class CustomClose extends ClipRRect {
+  final Function() onPressed;
+
+  CustomClose({
+    super.key,
+    required this.onPressed,
+  }) : super(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: onPressed,
+              child:
+                  SizedBox(child: SvgPicture.asset('assets/icons/close.svg')),
             ),
           ),
         );

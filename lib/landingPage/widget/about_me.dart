@@ -24,13 +24,16 @@ class AboutMe extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                CloseButton(
-                  onPressed: () => Navigator.pop(context),
-                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
+                  child: CustomClose(
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                )
               ],
             ),
             SizedBox(
-              height: 400,
+              height: 398,
               child: Scrollbar(
                 thumbVisibility: true,
                 thickness: 3,
