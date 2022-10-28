@@ -1,3 +1,4 @@
+import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:about_me/landingPage/widget/custom_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,7 @@ class KeywordCard extends StatelessWidget {
   Widget build(BuildContext context) {
     BottomNavigationProvider bottomNavigationProvider =
         Provider.of<BottomNavigationProvider>(context);
+    KeywordProvider keywordProvider = Provider.of<KeywordProvider>(context);
     return CustomCard(
       widget: Padding(
         padding: const EdgeInsets.fromLTRB(10, 18, 10, 0),
@@ -77,6 +79,8 @@ class KeywordCard extends StatelessWidget {
             children: [
               CircleButton(
                 onTap: (context) {
+                  // keywordProvider.currentKeywords;
+                  keywordProvider.updateKeyword(idx);
                   bottomNavigationProvider.push(4);
                 },
                 icon: Icons.keyboard_arrow_down,

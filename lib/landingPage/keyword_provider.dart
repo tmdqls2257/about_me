@@ -5,6 +5,15 @@ import 'package:flutter/material.dart';
 import 'keyword_model.dart';
 
 class KeywordProvider extends ChangeNotifier {
-  final List<KeyWord> _keywordList = [];
-  get currentKeywords => keywordList;
+  int _index = 0;
+  get allKeywords => keywordList;
+
+  void updateKeyword(int index) {
+    // return allKeywords[index];
+    _index = index;
+  }
+
+  KeyWord currentKeyword() {
+    return allKeywords[_index];
+  }
 }

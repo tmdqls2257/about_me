@@ -34,7 +34,7 @@ class KeywordList extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
           child: Carousel(
             height: 178,
-            items: keywordProvider.currentKeywords,
+            items: keywordProvider.allKeywords,
             builderFunction: (context, item, index) {
               return KeywordCard(
                   idx: index, title: item.title, content: item.content);

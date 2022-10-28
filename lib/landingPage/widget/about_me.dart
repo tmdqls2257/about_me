@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/custom_scrollbar.dart';
 import '../../shared/shared.dart';
 
 class AboutMe extends StatelessWidget {
@@ -14,8 +15,11 @@ class AboutMe extends StatelessWidget {
     showModalBottomSheet<void>(
       isScrollControlled: true,
       context: context,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
       ),
       builder: (BuildContext context) {
         return SizedBox(
@@ -32,43 +36,34 @@ class AboutMe extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 398,
-              child: Scrollbar(
-                thumbVisibility: true,
-                thickness: 3,
-                radius: const Radius.circular(2),
-                child: ListView(
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                    CustomText(text: 'sdsds'),
-                  ],
-                ),
-              ),
+            CustomScrollbar(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              listWidget: [
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+                CustomText(text: 'sdsds'),
+              ],
             ),
           ]),
         );
