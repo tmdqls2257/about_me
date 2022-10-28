@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:about_me/provider/bottom_navigation_provider.dart';
-import 'package:about_me/shared/custom_appbar.dart';
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +18,7 @@ class WebViewGithub extends StatelessWidget {
 
     return Scaffold(
         appBar: CustomAppBar(
+          isHome: true,
           onPressed: () {
             bottomNavigationProvider.pop();
           },

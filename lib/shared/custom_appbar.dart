@@ -5,24 +5,35 @@ import 'shared.dart';
 class CustomAppBar extends AppBar {
   final Widget widget;
   final bool isBackBtn;
-  final void Function()? onPressed;
+  final bool isHome;
+  final void Function() onPressed;
 
-  CustomAppBar(
-      {super.key,
-      this.widget = const SizedBox(),
-      this.onPressed,
-      this.isBackBtn = true})
-      : super(
+  CustomAppBar({
+    super.key,
+    this.widget = const SizedBox(),
+    required this.onPressed,
+    this.isBackBtn = true,
+    this.isHome = false,
+  }) : super(
           centerTitle: true,
+          leadingWidth: 76,
           leading: Row(children: [
+            const SizedBox(
+              width: 14,
+            ),
             if (isBackBtn)
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: customColor[CustomColor.black],
-                ),
+              CustomIconBtn(
                 onPressed: onPressed,
-              )
+                svgAsset: SvgIconType.arrowBack,
+              ),
+            const SizedBox(
+              width: 14,
+            ),
+            if (isHome)
+              CustomIconBtn(
+                onPressed: onPressed,
+                svgAsset: SvgIconType.home,
+              ),
           ]),
           title: widget,
           backgroundColor: customColor[CustomColor.white],

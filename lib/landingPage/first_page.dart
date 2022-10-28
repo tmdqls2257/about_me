@@ -12,7 +12,6 @@ class FirstPage extends StatelessWidget {
 
   _sendEmail(BuildContext context) async {
     try {
-      Error();
       String email = Uri.encodeComponent("tmdqls2257@gmail.com");
       String subject = Uri.encodeComponent("안녕하세요 육아크루 여러분");
       String body = Uri.encodeComponent("저는 홍승빈이라고 합니다.");
