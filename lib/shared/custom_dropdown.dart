@@ -23,7 +23,7 @@ class DropdownButtonApp extends StatelessWidget {
             typoType: TypoType.bodyBolder,
           ),
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+            contentPadding: const EdgeInsets.fromLTRB(9, 0, 9, 0),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(17),
               borderSide:

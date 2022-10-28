@@ -1,7 +1,9 @@
 import 'package:about_me/shared/custom_appbar.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../provider/bottom_navigation_provider.dart';
 import '../shared/shared.dart';
@@ -10,10 +12,46 @@ import 'widget/widget.dart';
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
 
+  _sendEmail(BuildContext context) async {
+    try {
+      Error();
+      String email = Uri.encodeComponent("tmdqls2257@gmail.com");
+      String subject = Uri.encodeComponent("안녕하세요 육아크루 여러분");
+      String body = Uri.encodeComponent("저는 홍승빈이라고 합니다.");
+      Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
+      await launchUrl(mail);
+    } catch (err) {
+      String title =
+          "기본 메일 앱을 사용할 수 없기 때문에 앱에서 바로 문의를 전송하기 어려운 상황입니다.\n\n아래 이메일로 연락주시면 친절하게 답변해드릴게요 :)\n\ntmdqls2257@gmail.com";
+      _showMyDialog(context, title);
+    }
+  }
+
   void _onTapGithup(BuildContext context) {
     BottomNavigationProvider bottomNavigationProvider =
         Provider.of<BottomNavigationProvider>(context, listen: false);
     bottomNavigationProvider.push(1);
+  }
+
+  Future<void> _showMyDialog(BuildContext context, String err) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: CustomText(text: 'Error'),
+          content: SingleChildScrollView(child: CustomText(text: err)),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('뒤로가기'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _onTapPopUp(BuildContext context) {
@@ -200,6 +238,13 @@ class FirstPage extends StatelessWidget {
                 ]),
           ),
         ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await _sendEmail(context);
+        },
+        backgroundColor: customColor[CustomColor.crimson],
+        child: SvgPicture.asset('assets/icons/edit_light.svg'),
       ),
     );
   }
