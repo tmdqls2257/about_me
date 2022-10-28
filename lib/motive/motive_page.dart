@@ -1,4 +1,3 @@
-import 'package:about_me/shared/custom_appbar.dart';
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +18,34 @@ class MotivePage extends StatelessWidget {
         onPressed: () {
           bottomNavigationProvider.pop();
         },
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 80.7),
+        child: Center(
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/images/chat_image.png',
+                width: 150,
+                height: 120,
+              ),
+              const SizedBox(
+                height: 30.23,
+              ),
+              CustomText(
+                text: '지원동기',
+                typoType: TypoType.h2,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomText(
+                text: '지원동기',
+                typoType: TypoType.labelLight,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
