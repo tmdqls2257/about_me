@@ -1,7 +1,5 @@
-import 'package:about_me/shared/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -208,10 +206,7 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-          widget: SvgPicture.asset(
-            'assets/logos/logo.svg',
-            width: 94,
-          ),
+          widget: svgIcon[SvgIconType.logo] as Widget,
           isBackBtn: false,
           onPressed: () {}),
       body: SingleChildScrollView(
@@ -222,8 +217,7 @@ class FirstPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 DropdownButtonApp(),
-                // const Icon(Icons.notifications_none)
-                SvgPicture.asset('assets/icons/bell_light.svg')
+                svgIcon[SvgIconType.bellLight] as Widget
               ],
             ),
           ),
@@ -244,7 +238,7 @@ class FirstPage extends StatelessWidget {
           await _sendEmail(context);
         },
         backgroundColor: customColor[CustomColor.crimson],
-        child: SvgPicture.asset('assets/icons/edit_light.svg'),
+        child: svgIcon[SvgIconType.editLight] as Widget,
       ),
     );
   }

@@ -2,12 +2,11 @@ import 'package:about_me/landingPage/first_page.dart';
 import 'package:about_me/landingPage/widget/keyword_detail.dart';
 import 'package:about_me/motive/motive_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import 'career/career_page.dart';
 import 'provider/bottom_navigation_provider.dart';
-import 'shared/theme.dart';
+import 'shared/shared.dart';
 import 'web_view_github.dart';
 
 class Home extends StatelessWidget {
@@ -60,33 +59,23 @@ class _BottomNavigationBar extends StatelessWidget {
           unselectedFontSize: 10,
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/icons/home.svg',
-              ),
-              activeIcon: SvgPicture.asset(
-                'assets/icons/home_pink.svg',
-              ),
+              icon: svgIcon[SvgIconType.home] as Widget,
+              activeIcon: svgIcon[SvgIconType.homePink] as Widget,
               label: '홈',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/flower.svg'),
-              activeIcon: SvgPicture.asset(
-                'assets/icons/flower_pink.svg',
-              ),
+              icon: svgIcon[SvgIconType.flower] as Widget,
+              activeIcon: svgIcon[SvgIconType.flowerPink] as Widget,
               label: '깃허브',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/chat.svg'),
-              activeIcon: SvgPicture.asset(
-                'assets/icons/chat_pink.svg',
-              ),
+              icon: svgIcon[SvgIconType.chatIcon] as Widget,
+              activeIcon: svgIcon[SvgIconType.chatIconPink] as Widget,
               label: '지원동기',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/icons/flower.svg'),
-              activeIcon: SvgPicture.asset(
-                'assets/icons/flower_pink.svg',
-              ),
+              icon: svgIcon[SvgIconType.myProfile] as Widget,
+              activeIcon: svgIcon[SvgIconType.myProfilePink] as Widget,
               label: '경력기술서',
             ),
           ],

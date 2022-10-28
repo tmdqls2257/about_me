@@ -95,7 +95,8 @@ enum SvgIconType {
   home,
   homePink,
   myProfile,
-  myProfilePink
+  myProfilePink,
+  logo
 }
 
 final svgIcon = {
@@ -112,9 +113,13 @@ final svgIcon = {
   SvgIconType.flowerPink: SvgPicture.asset('assets/icons/flower_pink.svg'),
   SvgIconType.home: SvgPicture.asset('assets/icons/home.svg'),
   SvgIconType.homePink: SvgPicture.asset('assets/icons/home_pink.svg'),
-  SvgIconType.myProfile: SvgPicture.asset('assets/icons/my_rofile.svg'),
+  SvgIconType.myProfile: SvgPicture.asset('assets/icons/my_profile.svg'),
   SvgIconType.myProfilePink:
       SvgPicture.asset('assets/icons/my_profile_pink.svg'),
+  SvgIconType.logo: SvgPicture.asset(
+    'assets/logos/logo.svg',
+    width: 94,
+  ),
 };
 
 class CustomIconBtn extends ClipRRect {
