@@ -22,7 +22,7 @@ class LearnMoreAboutMeItem extends StatelessWidget {
           width: 16,
         ),
         Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: listWidget,
         ),

@@ -21,7 +21,7 @@ class LearnMoreAboutMe extends StatelessWidget {
       ),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
+          crossAxisAlignment: CrossAxisAlignment.end, //Center Row cont,
           children: listWidget),
     );
   }

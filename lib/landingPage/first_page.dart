@@ -24,7 +24,7 @@ class FirstPage extends StatelessWidget {
     }
   }
 
-  void _onTapGithup(BuildContext context) {
+  _onTapGithup(BuildContext context) {
     BottomNavigationProvider bottomNavigationProvider =
         Provider.of<BottomNavigationProvider>(context, listen: false);
     bottomNavigationProvider.push(1);
@@ -49,6 +49,12 @@ class FirstPage extends StatelessWidget {
         );
       },
     );
+  }
+
+  void _onTapEdit(BuildContext context) {
+    BottomNavigationProvider bottomNavigationProvider =
+        Provider.of<BottomNavigationProvider>(context, listen: false);
+    bottomNavigationProvider.push(2);
   }
 
   Future<void> _onTapPopUp(BuildContext context) {
@@ -182,12 +188,22 @@ class FirstPage extends StatelessWidget {
                     typoType: TypoType.bodyBolder,
                   ),
                   CustomText(
+                    textAlign: TextAlign.end,
                     text: '합류한다면 이런 일을 하고 싶습니다.',
                     typoType: TypoType.bodyLight,
                     color: CustomColor.grey,
-                  )
+                  ),
                 ],
               ),
+              InkWell(
+                  onTap: () {
+                    _onTapEdit(context);
+                  },
+                  child: CustomText(
+                    text: '수정',
+                    typoType: TypoType.bodyLight,
+                    color: CustomColor.grey,
+                  ))
             ])
           ],
         ),
@@ -218,12 +234,13 @@ class FirstPage extends StatelessWidget {
           AboutMe(context: context),
           Padding(
             padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _learnAboutMeList(context),
-                  KeywordList(content: context)
-                ]),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              _learnAboutMeList(
+                context,
+              ),
+              KeywordList(content: context)
+            ]),
           ),
         ]),
       ),

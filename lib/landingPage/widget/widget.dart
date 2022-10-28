@@ -1,4 +1,4 @@
-export 'LearnMoreAboutMeItem.dart';
+export 'learn_more_about_me_item.dart';
 export 'about_me.dart';
 export 'custom_card.dart';
 export 'keyword_card.dart';
