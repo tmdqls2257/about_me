@@ -18,8 +18,11 @@ class WebViewGithub extends StatelessWidget {
 
     return Scaffold(
         appBar: CustomAppBar(
+          onPressedHome: () {
+            bottomNavigationProvider.push(0);
+          },
           isHome: true,
-          onPressed: () {
+          onPressedBack: () {
             bottomNavigationProvider.pop();
           },
           widget: CustomText(text: "tmdqls2257's github"),

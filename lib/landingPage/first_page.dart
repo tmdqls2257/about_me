@@ -205,9 +205,10 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+          onPressedHome: () {},
           widget: svgIcon[SvgIconType.logo] as Widget,
           isBackBtn: false,
-          onPressed: () {}),
+          onPressedBack: () {}),
       body: SingleChildScrollView(
         child: Column(children: [
           Padding(

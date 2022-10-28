@@ -6,12 +6,14 @@ class CustomAppBar extends AppBar {
   final Widget widget;
   final bool isBackBtn;
   final bool isHome;
-  final void Function() onPressed;
+  final void Function() onPressedBack;
+  final void Function() onPressedHome;
 
   CustomAppBar({
     super.key,
     this.widget = const SizedBox(),
-    required this.onPressed,
+    required this.onPressedBack,
+    required this.onPressedHome,
     this.isBackBtn = true,
     this.isHome = false,
   }) : super(
@@ -23,7 +25,7 @@ class CustomAppBar extends AppBar {
             ),
             if (isBackBtn)
               CustomIconBtn(
-                onPressed: onPressed,
+                onPressed: onPressedBack,
                 svgAsset: SvgIconType.arrowBack,
               ),
             const SizedBox(
@@ -31,7 +33,7 @@ class CustomAppBar extends AppBar {
             ),
             if (isHome)
               CustomIconBtn(
-                onPressed: onPressed,
+                onPressed: onPressedHome,
                 svgAsset: SvgIconType.home,
               ),
           ]),

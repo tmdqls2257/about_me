@@ -1,4 +1,3 @@
-import 'package:about_me/shared/custom_appbar.dart';
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,9 +14,10 @@ class CareerPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         widget: CustomText(text: '경력기술서'),
-        onPressed: () {
+        onPressedBack: () {
           bottomNavigationProvider.pop();
         },
+        onPressedHome: () {},
       ),
     );
   }

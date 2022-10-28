@@ -14,8 +14,9 @@ class MotivePage extends StatelessWidget {
 
     return Scaffold(
       appBar: CustomAppBar(
+        onPressedHome: () {},
         widget: CustomText(text: '지원동기'),
-        onPressed: () {
+        onPressedBack: () {
           bottomNavigationProvider.pop();
         },
       ),
