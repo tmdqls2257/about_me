@@ -108,7 +108,7 @@ final svgIcon = {
   SvgIconType.close: SvgPicture.asset('assets/icons/close.svg'),
   SvgIconType.editLight: SvgPicture.asset('assets/icons/edit_light.svg'),
   SvgIconType.feedingBottle:
-      SvgPicture.asset('assets/icons/feeding_bottle.svg'),
+      SvgPicture.asset('assets/icons/feeding_bottle_icon.svg'),
   SvgIconType.flower: SvgPicture.asset('assets/icons/flower.svg'),
   SvgIconType.flowerPink: SvgPicture.asset('assets/icons/flower_pink.svg'),
   SvgIconType.home: SvgPicture.asset('assets/icons/home.svg'),

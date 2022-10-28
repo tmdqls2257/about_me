@@ -117,44 +117,38 @@ class FirstPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(0, 19, 0, 19),
         child: Column(
           children: [
-            LearnMoreAboutMe(
-              onTap: _onTapGithup,
-              column: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            LearnMoreAboutMe(listWidget: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomText(
                     text: '개발 실력이 더 궁금하다면?',
                     typoType: TypoType.bodyBolder,
                   ),
-                  Stack(
-                    alignment: AlignmentDirectional.bottomStart,
-                    children: [
-                      const Highlighter(
-                        color: CustomColor.green,
-                        width: 38,
-                      ),
-                      RichText(
-                        text: CustomTextSpan(children: [
-                          CustomTextSpan(text: '깃허브', color: CustomColor.green),
-                          CustomTextSpan(
-                            text: '에서 커밋로그를 보실 수 있어요!',
-                          )
-                        ]),
-                      )
-                    ],
-                  )
+                  Stack(alignment: AlignmentDirectional.bottomStart, children: [
+                    const Highlighter(
+                      color: CustomColor.green,
+                      width: 38,
+                    ),
+                    RichText(
+                      text: CustomTextSpan(children: [
+                        CustomTextSpan(text: '깃허브', color: CustomColor.green),
+                        CustomTextSpan(
+                          text: '에서 커밋로그를 보실 수 있어요!',
+                        )
+                      ]),
+                    )
+                  ])
                 ],
               ),
-            ),
+              CircleButton(
+                onTap: _onTapGithup,
+              )
+            ]),
             const Spacer(),
-            LearnMoreAboutMe(
-              assetPath: 'assets/icons/lip_icon.svg',
-              onTap: _onTapPopUp,
-              column: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            LearnMoreAboutMe(listWidget: [
+              LearnMoreAboutMeItem(
+                listWidget: [
                   Stack(
                     alignment: AlignmentDirectional.bottomStart,
                     children: [
@@ -170,19 +164,19 @@ class FirstPage extends StatelessWidget {
                     text: '합격 결과는 여기로 통보해 주세요',
                     typoType: TypoType.bodyLight,
                     color: CustomColor.grey,
-                  )
+                  ),
                 ],
+                svgIconType: SvgIconType.lipIcon,
               ),
-            ),
+              CircleButton(
+                onTap: _onTapPopUp,
+              )
+            ]),
             const Spacer(),
-            LearnMoreAboutMe(
-              assetPath: 'assets/icons/feeding_bottle_icon.svg',
-              onTap: _onTapPopUp,
-              isButton: false,
-              column: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            LearnMoreAboutMe(listWidget: [
+              LearnMoreAboutMeItem(
+                svgIconType: SvgIconType.feedingBottle,
+                listWidget: [
                   CustomText(
                     text: '육아크루 지원동기',
                     typoType: TypoType.bodyBolder,
@@ -194,7 +188,7 @@ class FirstPage extends StatelessWidget {
                   )
                 ],
               ),
-            ),
+            ])
           ],
         ),
       ),

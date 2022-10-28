@@ -4,18 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import '../../shared/shared.dart';
 
 class LearnMoreAboutMe extends StatelessWidget {
-  final String assetPath;
-  final Column column;
-  final bool isButton;
-  final void Function(BuildContext) onTap;
+  final List<Widget> listWidget;
 
-  const LearnMoreAboutMe({
-    Key? key,
-    this.assetPath = '',
-    required this.column,
-    required this.onTap,
-    this.isButton = true,
-  }) : super(key: key);
+  const LearnMoreAboutMe({Key? key, required this.listWidget})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +21,9 @@ class LearnMoreAboutMe extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
-            children: [
-              if (assetPath != '') SvgPicture.asset(assetPath),
-              if (assetPath != '')
-                const SizedBox(
-                  width: 16,
-                ),
-              column,
-            ],
-          ),
-          if (isButton) CircleButton(onTap: onTap)
-        ],
-      ),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center, //Center Row cont,
+          children: listWidget),
     );
   }
 }
