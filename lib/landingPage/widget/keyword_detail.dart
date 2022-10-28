@@ -1,6 +1,7 @@
 import 'package:about_me/shared/custom_scrollbar.dart';
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/bottom_navigation_provider.dart';
@@ -30,7 +31,8 @@ class KeywordDetail extends StatelessWidget {
                 right: 0,
                 top: 0,
                 // child: CloseButton(),
-                child: CustomClose(
+                child: CustomIconBtn(
+                  svgAsset: SvgIconType.close,
                   onPressed: () {
                     bottomNavigationProvider.pop();
                   },

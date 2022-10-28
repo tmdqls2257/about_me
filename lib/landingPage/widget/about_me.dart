@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../shared/custom_scrollbar.dart';
 import '../../shared/shared.dart';
@@ -30,8 +31,9 @@ class AboutMe extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 20, 20, 0),
-                  child: CustomClose(
+                  child: CustomIconBtn(
                     onPressed: () => Navigator.pop(context),
+                    svgAsset: SvgIconType.close,
                   ),
                 )
               ],

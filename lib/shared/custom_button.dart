@@ -81,19 +81,60 @@ class CustomButton extends ClipRRect {
         );
 }
 
-class CustomClose extends ClipRRect {
-  final Function() onPressed;
+enum SvgIconType {
+  arrowBack,
+  bellLight,
+  chatIcon,
+  chatIconPink,
+  lipIcon,
+  close,
+  editLight,
+  feedingBottle,
+  flower,
+  flowerPink,
+  home,
+  homePink,
+  myProfile,
+  myProfilePink
+}
 
-  CustomClose({
+final svgIcon = {
+  SvgIconType.arrowBack: SvgPicture.asset('assets/icons/arrow_back.svg'),
+  SvgIconType.bellLight: SvgPicture.asset('assets/icons/bell_light.svg'),
+  SvgIconType.chatIcon: SvgPicture.asset('assets/icons/chat.svg'),
+  SvgIconType.chatIconPink: SvgPicture.asset('assets/icons/chat_pink.svg'),
+  SvgIconType.lipIcon: SvgPicture.asset('assets/icons/lip_icon.svg'),
+  SvgIconType.close: SvgPicture.asset('assets/icons/close.svg'),
+  SvgIconType.editLight: SvgPicture.asset('assets/icons/edit_light.svg'),
+  SvgIconType.feedingBottle:
+      SvgPicture.asset('assets/icons/feeding_bottle.svg'),
+  SvgIconType.flower: SvgPicture.asset('assets/icons/flower.svg'),
+  SvgIconType.flowerPink: SvgPicture.asset('assets/icons/flower_pink.svg'),
+  SvgIconType.home: SvgPicture.asset('assets/icons/home.svg'),
+  SvgIconType.homePink: SvgPicture.asset('assets/icons/home_pink.svg'),
+  SvgIconType.myProfile: SvgPicture.asset('assets/icons/my_rofile.svg'),
+  SvgIconType.myProfilePink:
+      SvgPicture.asset('assets/icons/my_profile_pink.svg'),
+};
+
+class CustomIconBtn extends ClipRRect {
+  final void Function() onPressed;
+  final SvgIconType svgAsset;
+
+  CustomIconBtn({
     super.key,
     required this.onPressed,
+    required this.svgAsset,
   }) : super(
           child: Material(
             color: Colors.transparent,
             child: InkWell(
               onTap: onPressed,
-              child:
-                  SizedBox(child: SvgPicture.asset('assets/icons/close.svg')),
+              child: SizedBox(
+                width: 24,
+                height: 24,
+                child: svgIcon[svgAsset],
+              ),
             ),
           ),
         );

@@ -152,7 +152,7 @@ class FirstPage extends StatelessWidget {
             ),
             const Spacer(),
             LearnMoreAboutMe(
-              assetPath: 'assets/icons/chat_icon.svg',
+              assetPath: 'assets/icons/lip_icon.svg',
               onTap: _onTapPopUp,
               column: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -208,12 +208,12 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        widget: SvgPicture.asset(
-          'assets/logos/logo.svg',
-          width: 94,
-        ),
-        isBackBtn: false,
-      ),
+          widget: SvgPicture.asset(
+            'assets/logos/logo.svg',
+            width: 94,
+          ),
+          isBackBtn: false,
+          onPressed: () {}),
       body: SingleChildScrollView(
         child: Column(children: [
           Padding(
