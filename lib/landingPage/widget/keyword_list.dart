@@ -1,11 +1,9 @@
-import 'package:about_me/landingPage/keyword_model.dart';
 import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../carouselSlider/carouse.dart';
 import '../../shared/shared.dart';
-import '../keyword_data.dart';
 import 'keyword_card.dart';
 
 class KeywordList extends StatelessWidget {

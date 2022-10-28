@@ -41,7 +41,6 @@ class CustomButton extends ClipRRect {
   final CustomW width;
   final double height;
   final TypoType typoType;
-  final BorderRadiusGeometry borderRadius;
   final Function() onPressed;
 
   CustomButton({
@@ -51,7 +50,7 @@ class CustomButton extends ClipRRect {
     this.textColor = CustomColor.white,
     this.typoType = TypoType.body,
     this.height = 36.0,
-    this.borderRadius = BorderRadius.zero,
+    super.borderRadius = BorderRadius.zero,
     required this.label,
     required this.onPressed,
   }) : super(

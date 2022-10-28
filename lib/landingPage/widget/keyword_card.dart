@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 import '../../provider/bottom_navigation_provider.dart';
 import '../../shared/shared.dart';
-import 'keyword_detail.dart';
 
 class KeywordCard extends StatelessWidget {
   final int idx;

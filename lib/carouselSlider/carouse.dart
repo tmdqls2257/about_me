@@ -1,8 +1,6 @@
 import 'package:about_me/landingPage/keyword_model.dart';
 import 'package:flutter/material.dart';
 
-import '../shared/shared.dart';
-
 class Carousel extends StatelessWidget {
   const Carousel({
     Key? key,

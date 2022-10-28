@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:about_me/shared/theme.dart';
 import 'package:about_me/shared/custom_text.dart';
 import 'package:flutter/material.dart';
