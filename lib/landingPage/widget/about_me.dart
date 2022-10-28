@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../shared/custom_scrollbar.dart';
 import '../../shared/shared.dart';
 
 class AboutMe extends StatelessWidget {

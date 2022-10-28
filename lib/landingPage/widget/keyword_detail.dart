@@ -1,7 +1,5 @@
-import 'package:about_me/shared/custom_scrollbar.dart';
 import 'package:about_me/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../provider/bottom_navigation_provider.dart';
