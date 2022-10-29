@@ -10,12 +10,14 @@ import 'widget/widget.dart';
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
 
-  _sendEmail(BuildContext context) async {
+  _sendEmail(BuildContext context,
+      {String email = "", String subject = "", String body = ""}) async {
     try {
-      String email = Uri.encodeComponent("tmdqls2257@gmail.com");
-      String subject = Uri.encodeComponent("안녕하세요 육아크루 여러분");
-      String body = Uri.encodeComponent("저는 홍승빈이라고 합니다.");
-      Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
+      String encodeEmail = Uri.encodeComponent(email);
+      String encodeSubject = Uri.encodeComponent(subject);
+      String encodeBody = Uri.encodeComponent(body);
+      Uri mail = Uri.parse(
+          "mailto:$encodeEmail?subject=$encodeSubject&body=$encodeBody");
       await launchUrl(mail);
     } catch (err) {
       String title =
@@ -98,8 +100,8 @@ class FirstPage extends StatelessWidget {
                 Expanded(
                   child: CustomButton(
                     label: '연락하기',
-                    onPressed: () {
-                      Navigator.of(context).pop();
+                    onPressed: () async {
+                      _sendEmail(context);
                     },
                     height: 50,
                     bgColor: CustomColor.green,
@@ -246,7 +248,12 @@ class FirstPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await _sendEmail(context);
+          await _sendEmail(
+            context,
+            email: 'tmdqls2257@gmail.com',
+            subject: '안녕하세요 육아크루 여러분',
+            body: '저는 홍승빈이라고 합니다.',
+          );
         },
         backgroundColor: customColor[CustomColor.crimson],
         child: svgIcon[SvgIconType.editLight] as Widget,
