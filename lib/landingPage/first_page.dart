@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../provider/bottom_navigation_provider.dart';
 import '../shared/shared.dart';
+import '../utils/url_parser_route.dart';
 import 'widget/widget.dart';
 
 class FirstPage extends StatelessWidget {
@@ -16,9 +16,8 @@ class FirstPage extends StatelessWidget {
       String encodeEmail = Uri.encodeComponent(email);
       String encodeSubject = Uri.encodeComponent(subject);
       String encodeBody = Uri.encodeComponent(body);
-      Uri mail = Uri.parse(
+      urlParserRoute(
           "mailto:$encodeEmail?subject=$encodeSubject&body=$encodeBody");
-      await launchUrl(mail);
     } catch (err) {
       String title =
           "기본 메일 앱을 사용할 수 없기 때문에 앱에서 바로 문의를 전송하기 어려운 상황입니다.\n\n아래 이메일로 연락주시면 친절하게 답변해드릴게요 :)\n\ntmdqls2257@gmail.com";

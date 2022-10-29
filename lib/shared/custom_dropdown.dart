@@ -1,7 +1,8 @@
 import 'package:about_me/shared/theme.dart';
 import 'package:about_me/shared/custom_text.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../utils/url_parser_route.dart';
 
 class DropdownButtonApp extends StatelessWidget {
   DropdownButtonApp({super.key});
@@ -34,26 +35,19 @@ class DropdownButtonApp extends StatelessWidget {
             ),
           ),
           // value: dropdownValue,
-          items: itemList.map(buildMenuItem).toList(),
+          items: itemList.map(_buildMenuItem).toList(),
           onChanged: (String? newValue) async {
             newValue == '노션'
-                ? onChangeRout(
+                ? urlParserRoute(
                     'https://www.notion.so/f11c7d9385c34a858659349c17764e84')
-                : onChangeRout('https://applecoke.tistory.com/');
+                : urlParserRoute('https://applecoke.tistory.com/');
           },
         ),
       ),
     );
   }
 
-  void onChangeRout(String url) async {
-    final Uri uri = Uri.parse(url);
-    // log('await ${canLaunchUrl(uri)}');
-    // await canLaunchUrl(uri) && await launchUrl(uri);
-    await launchUrl(uri);
-  }
-
-  DropdownMenuItem<String> buildMenuItem(String item) {
+  DropdownMenuItem<String> _buildMenuItem(String item) {
     return DropdownMenuItem(
       value: item,
       child: CustomText(
