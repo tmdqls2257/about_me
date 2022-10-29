@@ -4,8 +4,12 @@ import '../../shared/shared.dart';
 
 class LearnMoreAboutMe extends StatelessWidget {
   final List<Widget> listWidget;
+  final CrossAxisAlignment crossAxis;
 
-  const LearnMoreAboutMe({Key? key, required this.listWidget})
+  const LearnMoreAboutMe(
+      {Key? key,
+      required this.listWidget,
+      this.crossAxis = CrossAxisAlignment.center})
       : super(key: key);
 
   @override
@@ -21,7 +25,7 @@ class LearnMoreAboutMe extends StatelessWidget {
       ),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end, //Center Row cont,
+          crossAxisAlignment: crossAxis,
           children: listWidget),
     );
   }

@@ -181,7 +181,7 @@ class FirstPage extends StatelessWidget {
               )
             ]),
             const Spacer(),
-            LearnMoreAboutMe(listWidget: [
+            LearnMoreAboutMe(crossAxis: CrossAxisAlignment.end, listWidget: [
               LearnMoreAboutMeItem(
                 svgIconType: SvgIconType.feedingBottle,
                 listWidget: [
