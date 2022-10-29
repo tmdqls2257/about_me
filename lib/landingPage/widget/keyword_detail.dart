@@ -38,7 +38,7 @@ class KeywordDetail extends StatelessWidget {
               ),
               Center(
                 child: Avatar(
-                  assetName: 'assets/images/splashImage.png',
+                  assetName: 'assets/images/app_image.png',
                   radius: 64,
                 ),
               )

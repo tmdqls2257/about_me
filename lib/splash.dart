@@ -38,7 +38,7 @@ class _SplashState extends State<Splash> {
       //   fit: BoxFit.cover,
       // ),
       child: Image.asset(
-        'assets/images/splashImage.png',
+        'assets/images/splash_image.png',
         fit: BoxFit.cover,
       ),
     ));

@@ -90,7 +90,7 @@ class AboutMe extends StatelessWidget {
           ),
           const Spacer(),
           Avatar(
-            assetName: 'assets/images/splashImage.png',
+            assetName: 'assets/images/app_image.png',
           ),
           const Spacer(),
           CustomText(
