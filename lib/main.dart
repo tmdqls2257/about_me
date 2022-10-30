@@ -1,3 +1,4 @@
+import 'package:about_me/career/career_provider.dart';
 import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:about_me/shared/theme.dart';
 import 'package:about_me/splash.dart';
@@ -15,6 +16,9 @@ void main() async {
         ),
         ChangeNotifierProvider(
           create: (BuildContext context) => KeywordProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => CareerProvider(),
         )
       ],
       child: const MyApp(),
