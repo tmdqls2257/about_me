@@ -144,3 +144,40 @@ class CustomIconBtn extends ClipRRect {
           ),
         );
 }
+
+class CustomOutlinedBtn extends InkWell {
+  final CustomW width;
+  final CustomColor textColor;
+  final String label;
+  final double height;
+  final Function() onPressed;
+
+  CustomOutlinedBtn({
+    Key? key,
+    this.width = CustomW.w2,
+    this.height = 30.0,
+    this.textColor = CustomColor.black,
+    required this.label,
+    required this.onPressed,
+  }) : super(
+          key: key,
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(15.0),
+          child: Ink(
+              padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+              height: height,
+              width: customW[width],
+              decoration: BoxDecoration(
+                color: customColor[CustomColor.white],
+                border: Border.all(
+                  color: customColor[textColor]!,
+                ),
+                borderRadius: BorderRadius.circular(28.0),
+              ),
+              child: Center(
+                child: CustomText(
+                  text: label,
+                ),
+              )),
+        );
+}
