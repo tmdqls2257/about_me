@@ -1,14 +1,25 @@
 import 'package:about_me/landingPage/keyword_provider.dart';
 import 'package:about_me/shared/theme.dart';
+import 'package:about_me/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'home.dart';
 import 'provider/bottom_navigation_provider.dart';
 
 void main() async {
-  // await Future.delayed(const Duration(seconds: 3));
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) => BottomNavigationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => KeywordProvider(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,17 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(scaffoldBackgroundColor: customColor[CustomColor.white]),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (BuildContext context) => BottomNavigationProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (BuildContext context) => KeywordProvider(),
-          )
-        ],
-        child: const Home(),
-      ),
+      home: const Splash(),
     );
   }
 }

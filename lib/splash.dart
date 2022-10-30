@@ -33,12 +33,8 @@ class _SplashState extends State<Splash> {
         body: SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      // child: Image.network(
-      //   'https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      //   fit: BoxFit.cover,
-      // ),
       child: Image.asset(
-        'assets/images/splash_image.png',
+        'assets/images/app_image.png',
         fit: BoxFit.cover,
       ),
     ));
