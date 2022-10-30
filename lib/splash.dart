@@ -1,4 +1,4 @@
-import 'package:about_me/landingPage/first_page.dart';
+import 'package:about_me/home.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -21,7 +21,7 @@ class _SplashState extends State<Splash> {
       () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const FirstPage()),
+          MaterialPageRoute(builder: (context) => const Home()),
         );
       },
     );
