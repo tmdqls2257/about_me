@@ -6,6 +6,7 @@ enum TypoType {
   h1,
   h2,
   h3,
+  h3Light,
   bodyBolder,
   body,
   bodyLight,
@@ -35,6 +36,7 @@ final typoStyle = {
   ),
   TypoType.h2: TypoStyle(fontWeight: FontWeight.w700, fontSize: 18),
   TypoType.h3: TypoStyle(fontWeight: FontWeight.w700, fontSize: 16),
+  TypoType.h3Light: TypoStyle(fontWeight: FontWeight.w400, fontSize: 16),
   TypoType.bodyBolder: TypoStyle(
     fontWeight: FontWeight.w700,
     fontSize: 14,
