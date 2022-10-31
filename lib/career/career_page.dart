@@ -63,6 +63,30 @@ class CareerPage extends StatelessWidget {
                 },
                 label: 'appStoreLink',
               ),
+            if (career.appStoreLink != '')
+              const SizedBox(
+                width: 14,
+              ),
+            if (career.frontEndGithubLink != '')
+              CustomOutlinedBtn(
+                onPressed: () {
+                  urlParserRoute(career.frontEndGithubLink);
+                },
+                width: CustomW.w4,
+                label: 'frontEndGithubLink',
+              ),
+            if (career.frontEndGithubLink != '')
+              const SizedBox(
+                width: 14,
+              ),
+            if (career.backEndGithubLink != '')
+              CustomOutlinedBtn(
+                onPressed: () {
+                  urlParserRoute(career.backEndGithubLink);
+                },
+                width: CustomW.w4,
+                label: 'backEndGithubLink',
+              ),
           ],
         ),
         const SizedBox(

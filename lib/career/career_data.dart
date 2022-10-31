@@ -10,6 +10,8 @@ final List<Career> careerDataList = [
     title: "개인 블로그 만들기 프로젝트",
     period: "2022.09 ~",
     content: '프론트엔드부터 백엔드까지 처음부터 끝까지 만드는 프로젝트',
+    frontEndGithubLink: 'https://github.com/tmdqls2257/NextNestBlog-Client',
+    backEndGithubLink: 'https://github.com/tmdqls2257/NextNestBlog-Server',
   ),
   Career(
     title: "비사이드 코리아",
