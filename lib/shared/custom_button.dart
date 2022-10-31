@@ -145,7 +145,7 @@ class CustomIconBtn extends ClipRRect {
         );
 }
 
-class CustomOutlinedBtn extends InkWell {
+class CustomOutlinedBtn extends Material {
   final CustomW width;
   final CustomColor textColor;
   final String label;
@@ -160,24 +160,26 @@ class CustomOutlinedBtn extends InkWell {
     required this.label,
     required this.onPressed,
   }) : super(
-          key: key,
-          onTap: onPressed,
-          borderRadius: BorderRadius.circular(15.0),
-          child: Ink(
-              padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
-              height: height,
-              width: customW[width],
-              decoration: BoxDecoration(
-                color: customColor[CustomColor.white],
-                border: Border.all(
-                  color: customColor[textColor]!,
+            key: key,
+            child: InkWell(
+              onTap: onPressed,
+              borderRadius: BorderRadius.circular(15.0),
+              child: Ink(
+                padding: const EdgeInsets.fromLTRB(14, 0, 14, 0),
+                height: height,
+                width: customW[width],
+                decoration: BoxDecoration(
+                  color: customColor[CustomColor.white],
+                  border: Border.all(
+                    color: customColor[textColor]!,
+                  ),
+                  borderRadius: BorderRadius.circular(28.0),
                 ),
-                borderRadius: BorderRadius.circular(28.0),
+                child: Center(
+                  child: CustomText(
+                    text: label,
+                  ),
+                ),
               ),
-              child: Center(
-                child: CustomText(
-                  text: label,
-                ),
-              )),
-        );
+            ));
 }
