@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CustomScrollbar extends SizedBox {
   final List<Widget> listWidget;
   final EdgeInsetsGeometry padding;
+  final CrossAxisAlignment crossAxis;
   CustomScrollbar(
       {Key? key,
       super.height = 398,
       required this.listWidget,
-      this.padding = EdgeInsets.zero})
+      this.padding = EdgeInsets.zero,
+      this.crossAxis = CrossAxisAlignment.start})
       : super(
           key: key,
           width: double.infinity,
@@ -18,8 +20,7 @@ class CustomScrollbar extends SizedBox {
             child: SingleChildScrollView(
                 padding: padding,
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: listWidget)),
+                    crossAxisAlignment: crossAxis, children: listWidget)),
           ),
         );
 }
