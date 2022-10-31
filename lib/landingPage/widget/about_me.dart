@@ -39,30 +39,97 @@ class AboutMe extends StatelessWidget {
             CustomScrollbar(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               listWidget: [
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
-                CustomText(text: 'sdsds'),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '꾸준한 주니어',
+                  typoType: TypoType.h2,
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '저는 저 자신을 프론트엔드 백엔드 개발자가 아닌 소프트웨어 개발자라고 설명 드리고 싶습니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '만들고 싶은 서비스가 있다면 프론트엔드, 백엔드, 모바일 개발이든 서비스를 만들고 있습니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '단순히 프로젝트를 만들고 끝을 내고 싶지 않아',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '웹은 개인 블로그를 개발하고 유지보수 해나가고 있고',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '모바일은 플러터로 어플을 출시하고자 기획을 하고 있습니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '모바일은 플러터로 어플을 출시하고자 기획을 하고 있습니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '개발 철학',
+                  typoType: TypoType.h2,
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '테크 오타쿠가 세상을 구한다. 이게 저의 개발 철학입니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '삶 주변에 있는 문제들을 탐구하며 문제를 기술적으로 어떻게 해결할 수 있을지 고민을 하고',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '어떠한 프로덕트를 만들 수 있을지 생각하고 있습니다.',
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '기술에 대한 도전',
+                  typoType: TypoType.h2,
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                CustomText(
+                  textAlign: TextAlign.start,
+                  text: '새로운 기술에 관심이 많고, 끊임없는 공부를 통해 지속 성장하는 개발자이며',
+                ),
               ],
             ),
           ]),
