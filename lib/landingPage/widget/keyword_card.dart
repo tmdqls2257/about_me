@@ -20,7 +20,7 @@ class KeywordCard extends StatelessWidget {
 
   String _contentSplit(String content) {
     if (content.length > 20) {
-      String subWord = '${content.substring(0, 21)}...';
+      String subWord = '${content.substring(0, 23)}...';
       return subWord;
     } else {
       return content;
