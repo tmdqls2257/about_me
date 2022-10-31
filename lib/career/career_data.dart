@@ -5,6 +5,8 @@ final List<Career> careerDataList = [
     title: "옥소폴리틱스",
     period: "2022.09 ~ 2022.10",
     content: '옥소폴리틱스에서 주관하는 협업 프로적트에 참여하여 다른 개발자 준비생들과 협업하는 프로젝트 진행',
+    frontEndGithubLink:
+        'https://github.com/oxopolitics-internship-for-codestates/MoneyPig',
   ),
   Career(
     title: "개인 블로그 만들기 프로젝트",
